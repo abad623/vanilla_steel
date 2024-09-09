@@ -241,7 +241,7 @@ ujson==5.10.0
 uri-template==1.3.0
 urllib3==2.2.2
 uvicorn==0.30.6
--e git+https://github.com/abad623/vanilla_steel.git@ddc7fdbe8dc71ee1a2e9e80c761fac5d0e08ca7b#egg=vanilla_etl
+-e git+ssh://git@github.com/abad623/vanilla_steel.git@63486b6793eb06d87445b2a94cd1282679c9b380#egg=vanilla_etl
 wasabi==1.1.3
 watchdog==5.0.0
 wcwidth==0.2.13
