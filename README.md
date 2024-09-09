@@ -176,7 +176,7 @@ prefect server start
 This will launch the Prefect dashboard where you can track the status of your ETL jobs.
 
 ```plaintext
-http://localhost:8080
+http://localhost:4200
 ```
 From here, you can monitor your pipeline's performance, view logs, and manage tasks.
 
