@@ -6,10 +6,12 @@ from tabulate import tabulate
 from sklearn.metrics import classification_report
 from tabulate import tabulate
 from collections import defaultdict
-
+import warnings
 
 from sklearn.metrics import classification_report
 from tabulate import tabulate
+
+warnings.simplefilter("ignore")
 
 
 def flatten_labels_and_predictions(true_labels, pred_labels, label_map):

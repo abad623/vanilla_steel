@@ -47,7 +47,7 @@ source venv/bin/activate
 
 ### 3. Install the dependencies
 
-Install all required Python packages using the `requirements.txt` file:
+Install all required Python packages using the `requirements.txt` file from vanilla_etl folder:
 
 ```bash
 pip install -r requirements.txt
@@ -60,6 +60,7 @@ This project uses a `pyproject.toml` for configuration. Install the package itse
 ```bash
 pip install .
 ```
+consider the execution location is vanilla_steel folder where `pyproject.toml` exist
 
 Alternatively, if you are developing and want changes to take effect immediately:
 
@@ -110,16 +111,16 @@ vanilla_etl/
 
 Before running the ETL pipeline, place your Excel files in the appropriate directory:
 
-- Place the files you want to process in `vanilla_etl/data/external/`.
+- Place the files you want to process in `data/external/`.
 
 ### 2. Configuration
 
 Ensure that the `config.yaml` file is correctly configured with paths and settings. Here is a brief overview of key settings from the `config.yaml`:
 
 - **Data paths**:
-  - External: `vanilla_etl/data/external/`
-  - Interim: `vanilla_etl/data/interim/`
-  - Processed: `vanilla_etl/data/processed/`
+  - External: `data/external/`
+  - Interim: `data/interim/`
+  - Processed: `data/processed/`
 
 - **File types**: Specifies the valid file extensions for the input data.
 
@@ -129,9 +130,9 @@ Refer to the `config.yaml` file for detailed settings:
 
 ```yaml
 data_path:
-    external: "vanilla_etl/data/external/"
-    interim: "vanilla_etl/data/interim/"
-    processed: "vanilla_etl/data/processed/"
+    external: "data/external/"
+    interim: "data/interim/"
+    processed: "data/processed/"
 ```
 
 ### 3. Run the ETL pipeline
@@ -142,7 +143,7 @@ After configuring everything, run the ETL pipeline by executing the following co
 python main.py
 ```
 
-This will start the pipeline, process the Excel files, and output the results to the `vanilla_etl/data/processed/` directory.
+This will start the pipeline, process the Excel files, and output the results to the `data/processed/` directory.
 
 
 ### 4.Configuration Flags
