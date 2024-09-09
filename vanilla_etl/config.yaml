@@ -1,0 +1,192 @@
+data_path:
+    external: "vanilla_etl/data/external/"
+    interim: "vanilla_etl/data/interim/"
+    processed: "vanilla_etl/data/processed/"
+
+model_path:
+    artifacts: "vanilla_etl/models/artifacts/"
+    
+file_types:
+    valid_file_extensions: 
+        doc: "application/msword"
+        docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        odt: "application/vnd.oasis.opendocument.text"
+        xls: "application/vnd.ms-excel"
+        xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ods: "application/vnd.oasis.opendocument.spreadsheet"
+        ppt: "application/vnd.ms-powerpoint"
+        pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        odp: "application/vnd.oasis.opendocument.presentation"
+
+table_header_reference: 
+    - 'article_id'
+    - 'material'
+    - 'quantity'
+    - 'weight'
+    - 'grade'
+    - 'coating'
+    - 'width (mm)'
+    - 'length (mm)'
+    - 'height (mm)'
+    - 'finish'
+    - 'description'
+
+grade_gazetteer: 
+    - 'S235JR'
+    - 'S275JR'
+    - 'S355JR'
+    - 'S355J2'
+    - 'S420MC'
+    - 'S460MC'
+    - 'S500MC'
+    - 'S550MC'
+    - 'S600MC'
+    - 'S650MC'
+    - 'S700MC'
+    - 'S250GD'
+    - 'S320GD'
+    - 'DX51D'
+    - 'DX52D'
+    - 'DX53D'
+    - 'DX54D'
+    - 'DX56D'
+    - 'HX160YD'
+    - 'HX180YD'
+    - 'HX260LAD'
+    - 'HX300LAD'
+    - 'HX340LAD'
+    - 'S350GD'
+    - 'HX380LAD'
+    - 'HX420LAD'
+    - 'DC01'
+    - 'DC03'
+    - 'DC04'
+    - 'DC05'
+    - 'DC06'
+    - 'H340LAD'
+    - 'H380LAD'
+    - 'H420LAD'
+    - 'DD11'
+    - 'P235GH'
+    - 'P265GH'
+    - 'P355NH'
+    - 'HDC'
+    - 'HRP'
+    - 'CR'
+    - 'DRP'
+    - 'INA_DRP'
+
+coating_gazetteer: 
+    - 'Z100'
+    - 'Z140'
+    - 'Z200'
+    - 'Z275'
+    - 'Z350'
+    - 'Z450'
+    - 'AZ100'
+    - 'AZ150'
+    - 'AZ200'
+    - 'G10/10'
+    - 'G7/7'
+    - '60/60'
+    - 'MB'
+    - 'XFV'
+    - 'ZM310'
+    - 'XSV'
+    - 'GXES'
+    - 'O'
+    - 'X-ES'
+    - 'HES'
+    - 'E28'
+
+finish_gazetteer: 
+    - 'A'
+    - 'B'
+    - 'BA'
+    - 'C'
+    - 'D'
+    - 'E'
+    - 'G'
+    - 'GA'
+    - 'MB'
+    - 'O'
+    - 'P'
+    - 'SB'
+    - 'SP'
+    - '2B'
+    - '2D'
+    - '4'
+    - 'NO.1'
+    - 'NO.2D'
+    - 'NO.4'
+    - '2E'
+    - 'A2'
+    - 'BP'
+    - 'HR'
+    - 'CR'
+    - 'NO.1'
+    - 'NO.2D'
+
+label_dict: 
+    'article_id': 'ARTICLE_ID'
+    'material': 'MATERIAL'
+    'quantity': 'QUANTITY'
+    'weight': 'WEIGHT'
+    'grade': 'GRADE'
+    'coating': 'COATING'
+    'width (mm)': 'WIDTH (MM)'
+    'length (mm)': 'LENGTH (MM)'
+    'height (mm)': 'HEIGHT (MM)' 
+    'finish': 'FINISH'
+    'description': 'DESCRIPTION'
+
+label_map: 
+    'O': 0
+    'I-ARTICLE_ID': 1
+    'B-ARTICLE_ID': 2
+    'B-MATERIAL': 3
+    'I-MATERIAL': 4
+    'I-QUANTITY': 6
+    'B-QUANTITY': 5
+    'I-WEIGHT': 8
+    'B-WEIGHT': 7
+    'I-GRADE': 10
+    'B-GRADE': 9
+    'I-COATING': 12
+    'B-COATING': 11
+    'I-WIDTH (MM)': 14
+    'B-WIDTH (MM)': 13
+    'I-LENGTH (MM)': 16
+    'B-LENGTH (MM)': 15
+    'I-HEIGHT (MM)': 18
+    'B-HEIGHT (MM)': 17
+    'I-FINISH': 20
+    'B-FINISH': 19
+    'I-DESCRIPTION': 22
+    'B-DESCRIPTION': 21
+
+column_type_dict: 
+    'grade': 'categorical'
+    'coating': 'categorical'
+    'quantity': 'numeric'
+    'weight': 'numeric'
+    'width (mm)': 'numeric'
+    'length (mm)': 'numeric'
+    'height (mm)': 'numeric'
+    'article_id': 'text'
+    'material': 'text'
+    'description': 'text'
+    'finish': 'text'
+
+cluster_threshold: 0.8
+augmented_data: 1000
+
+train_configurations:
+    train_mode: True
+    validation: True
+    dataset_sparsity_rate: 0.2
+    data_synthesizing: True
+    train_params: 
+        learning_rate: 0.0005
+        batch_size: 5
+        num_epochs: 20 
