@@ -3,7 +3,7 @@ from utils.helper import load_config_file
 
 
 def main():
-    config = load_config_file(file_name="vanilla_etl/config.yaml")
+    config = load_config_file(file_name="config.yaml")
     run_pipeline(config)
 
 

@@ -1,10 +1,10 @@
 data_path:
-    external: "vanilla_etl/data/external/"
-    interim: "vanilla_etl/data/interim/"
-    processed: "vanilla_etl/data/processed/"
+    external: "data/external/"
+    interim: "data/interim/"
+    processed: "data/processed/"
 
 model_path:
-    artifacts: "vanilla_etl/models/artifacts/"
+    artifacts: "models/artifacts/"
     
 file_types:
     valid_file_extensions: 
